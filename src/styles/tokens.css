@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+:root,
+[data-theme="dark"] {
+  /* Colors */
+  --color-bg: #080808;
+  --color-surface: #121212;
+  --color-surface-2: #1a1a1a;
+  --color-surface-3: #222222;
+  --color-text: #f2f2f2;
+  --color-text-muted: #888888;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-nav-bg: rgba(8, 8, 8, 0.96);
+  --color-landing-glow: #1a0a0a;
+  --color-red: #e8222a;
+  --color-red-dim: rgba(232, 34, 42, 0.15);
+  --color-gold: #c9a227;
+  --color-gold-dim: rgba(201, 162, 39, 0.12);
+  --color-green: #22a852;
+  --color-green-dim: rgba(34, 168, 82, 0.15);
+  --color-blue: #2563eb;
+
+  /* Status pipeline */
+  --status-attempted: #f59e0b;
+  --status-parent: #3b82f6;
+  --status-approved: #22a852;
+  --status-denied: #ef4444;
+
+  /* Typography */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: clamp(1.5rem, 4vw, 2rem);
+  --text-3xl: clamp(1.75rem, 5vw, 2.5rem);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --page-pad-x: clamp(16px, 4vw, 40px);
+  --page-pad-y: clamp(16px, 3vw, 32px);
+
+  /* Layout */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --nav-height: 68px;
+  --sidebar-width: 240px;
+  --content-max: 1200px;
+
+  /* Breakpoints (reference — use in media queries) */
+  /* sm: 480px | md: 640px | lg: 768px | xl: 1024px | 2xl: 1280px */
+
+  /* Safe areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+[data-theme="light"] {
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f0f0;
+  --color-surface-3: #e8e8e8;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666666;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-nav-bg: rgba(255, 255, 255, 0.96);
+  --color-landing-glow: #fff5f5;
+  --color-red-dim: rgba(232, 34, 42, 0.1);
+  --color-gold-dim: rgba(201, 162, 39, 0.15);
+  --color-green-dim: rgba(34, 168, 82, 0.12);
+}
