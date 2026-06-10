@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import AppNav from '../components/AppNav';
 import NotificationBell from '../components/NotificationBell';
 import ThemeToggle from '../components/ThemeToggle';
@@ -6,8 +6,14 @@ import SchoolSwitcher from '../components/SchoolSwitcher';
 import { useAuth } from '../context/AuthProvider';
 
 export default function AppShell() {
-  const { profile, demoMode, user } = useAuth();
+  const { profile, demoMode, user, signOut } = useAuth();
+  const navigate = useNavigate();
   const role = profile?.role;
+
+  async function handleSignOut() {
+    await signOut();
+    navigate('/');
+  }
 
   return (
     <div className="app-shell">
@@ -23,6 +29,9 @@ export default function AppShell() {
             <div className="app-topbar__actions">
               <ThemeToggle compact />
               <NotificationBell />
+              <button type="button" className="topbar-signout" onClick={handleSignOut}>
+                Sign out
+              </button>
             </div>
           </header>
         )}

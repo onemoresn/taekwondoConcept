@@ -38,7 +38,6 @@ export default function StudentDashboard() {
 
       <div className="badge-row">
         <div className="badge-pill"><strong>{flags.tips}</strong><span>Tips</span></div>
-        <div className="badge-pill"><strong>{flags.stripes}</strong><span>Stripes</span></div>
         <div className="badge-pill">
           <strong>{flags.test_ready ? 'Yes' : 'No'}</strong>
           <span>Test ready</span>

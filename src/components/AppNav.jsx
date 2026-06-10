@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ROLE_LABELS } from '../constants/roles';
 import { useAuth } from '../context/AuthProvider';
 
@@ -30,14 +30,8 @@ const NAV_BY_ROLE = {
 };
 
 export default function AppNav({ role }) {
-  const { signOut, profile } = useAuth();
-  const navigate = useNavigate();
+  const { profile } = useAuth();
   const items = NAV_BY_ROLE[role] ?? [];
-
-  async function handleSignOut() {
-    await signOut();
-    navigate('/');
-  }
 
   return (
     <nav className="app-nav" aria-label={`${ROLE_LABELS[role]} navigation`}>
@@ -62,9 +56,6 @@ export default function AppNav({ role }) {
             {item.label}
           </NavLink>
         ))}
-        <button type="button" className="app-nav__link app-nav__signout" onClick={handleSignOut}>
-          Sign out
-        </button>
       </div>
     </nav>
   );
