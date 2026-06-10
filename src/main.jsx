@@ -8,9 +8,11 @@ import AppRouter from './routes/AppRouter';
 import './styles/tokens.css';
 import './styles/app.css';
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename || undefined}>
       <ThemeProvider>
         <AuthProvider>
           <SchoolProvider>

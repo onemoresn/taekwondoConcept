@@ -2,7 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+/** GitHub Pages project site: https://onemoresn.github.io/taekwondoConcept/ */
+const base = process.env.GITHUB_PAGES === 'true' ? '/taekwondoConcept/' : '/';
+
 export default defineConfig({
+  base,
   build: {
     rollupOptions: {
       output: {
@@ -28,7 +32,7 @@ export default defineConfig({
         orientation: 'portrait-primary',
         icons: [
           {
-            src: '/icons/icon.svg',
+            src: 'icons/icon.svg',
             sizes: 'any',
             type: 'image/svg+xml',
             purpose: 'any',
